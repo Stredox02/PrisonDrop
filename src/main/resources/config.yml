@@ -1,0 +1,21 @@
+database: ""
+right-click-command-with-pickaxe: "/dm open iaebuaefaia {player}"
+language:
+  nopermission: "&cYou don't have permissions"
+  toggle-drop-set:
+    false: "&6&lPRISON &8&l» &7Pickaxe drop set to &cfalse, &7now the player can drop &bdiamond pickaxe"
+    true: "&6&lPRISON &8&l» &7Pickaxe drop set to &atrue, &7now the player can't drop &bdiamond pickaxe"
+  cant-drop-pickaxe: "&6&lPICKAXE &8&l» &cYou can't drop your pickaxe!"
+  toggle-move-set:
+    false: "&6&lPRISON &8&l» &7Pickaxe move set to &cfalse, &7now the player can move &bdiamond pickaxe"
+    true: "&6&lPRISON &8&l» &7Pickaxe move set to &atrue, &7now the player can't move &bdiamond pickaxe"
+  cant-move-pickaxe: "&6&lPICKAXE &8&l» &cYou can't move your pickaxe!"
+  toggle-death-set:
+    false: "&6&lPRISON &8&l» &7Pickaxe death set to &cfalse, &7now the player can lose &bdiamond pickaxe"
+    true: "&6&lPRISON &8&l» &7Pickaxe drop set to &atrue, &7now the player can't lose &bdiamond pickaxe"
+  toggle-itemframe-set:
+    false: "&6&lPRISON &8&l» &7Pickaxe drop set to &cfalse, &7now the player can put the &bdiamond pickaxe &7on an itemframe"
+    true: "&6&lPRISON &8&l» &7Pickaxe drop set to &atrue, &7now the player can't put the &bdiamond pickaxe &7on an itemframe"
+  pick-on-item-frame: "&6&lPICKAXE &8&l» &cYou can't put your pick on an item frame"
+  death-message: "&6&lPICKAXE &8&l» &7You are &cdead! &7I'm looking for your pickaxe...."
+  kept-pickaxe: "&6&lPICKAXE &8&l» &7Good thing I kept your &bpickaxe!"

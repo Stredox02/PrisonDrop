@@ -1,0 +1,8 @@
+name: PrisonDrop
+version: ${project.version}
+main: it.stredox02.prisondrop.PrisonDrop
+author: Stredox02
+commands:
+  toggledeath:
+  toggleinvclick:
+  toggledrop:
