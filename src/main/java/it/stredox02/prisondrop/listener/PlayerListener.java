@@ -4,7 +4,6 @@ import it.stredox02.prisondrop.PrisonDrop;
 import it.stredox02.prisondrop.data.PlayerData;
 import it.stredox02.prisondrop.utils.Utils;
 import lombok.AllArgsConstructor;
-import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
@@ -77,8 +76,6 @@ public class PlayerListener implements Listener {
 
     @EventHandler
     public void onInventoryMove(InventoryInteractEvent event) {
-        Bukkit.broadcastMessage("InventoryInteractEvent");
-
         Player player = (Player) event.getWhoClicked();
         PlayerData data = prisonDrop.getPlayerDataManager().getData(player);
         if (event.getInventory().getType() != InventoryType.PLAYER) {
