@@ -1,38 +1,29 @@
 package it.stredox02.prisondrop.data;
 
+import lombok.Getter;
 import org.bukkit.entity.Player;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class PlayerDataManager {
 
-    private final List<PlayerData> dataList;
+    @Getter private final Map<UUID, PlayerData> dataMap;
 
     public PlayerDataManager() {
-        dataList = new ArrayList<>();
+        dataMap = new HashMap<>();
     }
 
     public PlayerData addData(Player player) {
         PlayerData data = new PlayerData(player);
-        dataList.add(data);
+        dataMap.put(player.getUniqueId(), data);
         return data;
     }
 
     public void removeData(Player player) {
-        PlayerData data = getData(player);
+        PlayerData data = dataMap.get(player.getUniqueId());
         if (data != null) {
-            dataList.remove(data);
+            dataMap.remove(player.getUniqueId());
         }
-    }
-
-    public PlayerData getData(Player player) {
-        for (PlayerData data : dataList) {
-            if (data.getPlayer() == player) {
-                return data;
-            }
-        }
-        return null;
     }
 
 }

@@ -24,7 +24,7 @@ public class ToggleDeathDrop implements CommandExecutor {
             player.sendMessage(Utils.colorize(prisonDrop.getConfig().getString("language.nopermission")));
             return false;
         }
-        PlayerData data = prisonDrop.getPlayerDataManager().getData(player);
+        PlayerData data = prisonDrop.getPlayerDataManager().getDataMap().get(player.getUniqueId());
         if (data.isDeathDrop()) {
             data.setDeathDrop(false);
             prisonDrop.getDatabase().updateDeathDropStatus(player, data.isDeathDrop());

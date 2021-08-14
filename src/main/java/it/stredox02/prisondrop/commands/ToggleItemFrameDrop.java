@@ -24,7 +24,7 @@ public class ToggleItemFrameDrop implements CommandExecutor {
             player.sendMessage(Utils.colorize(prisonDrop.getConfig().getString("language.nopermission")));
             return false;
         }
-        PlayerData data = prisonDrop.getPlayerDataManager().getData(player);
+        PlayerData data = prisonDrop.getPlayerDataManager().getDataMap().get(player.getUniqueId());
         if (data.isItemFrameDrop()) {
             data.setItemFrameDrop(false);
             prisonDrop.getDatabase().updateItemFrameStatus(player, data.isItemFrameDrop());

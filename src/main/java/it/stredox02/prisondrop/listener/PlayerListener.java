@@ -30,7 +30,7 @@ public class PlayerListener implements Listener {
 
     @EventHandler
     public void onQuit(PlayerQuitEvent event) {
-        prisonDrop.getPlayerDataManager().addData(event.getPlayer());
+        prisonDrop.getPlayerDataManager().removeData(event.getPlayer());
     }
 
     @EventHandler
@@ -39,7 +39,7 @@ public class PlayerListener implements Listener {
         if (event.getItemDrop().getItemStack().getType() != Material.DIAMOND_PICKAXE) {
             return;
         }
-        PlayerData data = prisonDrop.getPlayerDataManager().getData(player);
+        PlayerData data = prisonDrop.getPlayerDataManager().getDataMap().get(player.getUniqueId());
         if (!data.isGlobalDrop()) {
             return;
         }
@@ -50,7 +50,7 @@ public class PlayerListener implements Listener {
     @EventHandler
     public void onDeath(PlayerDeathEvent event) {
         Player player = event.getEntity();
-        PlayerData data = prisonDrop.getPlayerDataManager().getData(player);
+        PlayerData data = prisonDrop.getPlayerDataManager().getDataMap().get(player.getUniqueId());
         if (!data.isDeathDrop()) {
             return;
         }
@@ -66,7 +66,7 @@ public class PlayerListener implements Listener {
     @EventHandler
     public void onRespawn(PlayerRespawnEvent event) {
         Player player = event.getPlayer();
-        PlayerData data = prisonDrop.getPlayerDataManager().getData(player);
+        PlayerData data = prisonDrop.getPlayerDataManager().getDataMap().get(player.getUniqueId());
         if (!data.isDeathDrop()) {
             return;
         }
@@ -77,7 +77,7 @@ public class PlayerListener implements Listener {
     @EventHandler
     public void onInventoryMove(InventoryInteractEvent event) {
         Player player = (Player) event.getWhoClicked();
-        PlayerData data = prisonDrop.getPlayerDataManager().getData(player);
+        PlayerData data = prisonDrop.getPlayerDataManager().getDataMap().get(player.getUniqueId());
         if (event.getInventory().getType() != InventoryType.PLAYER) {
             return;
         }
@@ -92,7 +92,7 @@ public class PlayerListener implements Listener {
     @EventHandler
     public void onInventoryMove(InventoryClickEvent event) {
         Player player = (Player) event.getWhoClicked();
-        PlayerData data = prisonDrop.getPlayerDataManager().getData(player);
+        PlayerData data = prisonDrop.getPlayerDataManager().getDataMap().get(player.getUniqueId());
         if (!data.isMoveInventory()) {
             return;
         }
@@ -114,7 +114,7 @@ public class PlayerListener implements Listener {
     @EventHandler
     public void onInventoryMove(InventoryDragEvent event) {
         Player player = (Player) event.getWhoClicked();
-        PlayerData data = prisonDrop.getPlayerDataManager().getData(player);
+        PlayerData data = prisonDrop.getPlayerDataManager().getDataMap().get(player.getUniqueId());
         if (event.getInventory().getType() != InventoryType.PLAYER) {
             return;
         }
@@ -148,7 +148,7 @@ public class PlayerListener implements Listener {
             return;
         }
         Player player = event.getPlayer();
-        PlayerData data = prisonDrop.getPlayerDataManager().getData(player);
+        PlayerData data = prisonDrop.getPlayerDataManager().getDataMap().get(player.getUniqueId());
         if (!data.isGlobalDrop() || !data.isMoveInventory()) {
             return;
         }

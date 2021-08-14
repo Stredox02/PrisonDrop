@@ -24,7 +24,7 @@ public class ToggleGlobalDrop implements CommandExecutor {
             player.sendMessage(Utils.colorize(prisonDrop.getConfig().getString("language.nopermission")));
             return false;
         }
-        PlayerData data = prisonDrop.getPlayerDataManager().getData(player);
+        PlayerData data = prisonDrop.getPlayerDataManager().getDataMap().get(player.getUniqueId());
         if (data.isGlobalDrop()) {
             data.setGlobalDrop(false);
             data.setMoveInventory(false);

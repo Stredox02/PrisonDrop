@@ -62,9 +62,9 @@ public class SQLiteDatabase extends Database {
 
     @Override
     public void loadPlayer(Player player) {
-        PlayerData data = prisonDrop.getPlayerDataManager().getData(player) == null ?
+        PlayerData data = prisonDrop.getPlayerDataManager().getDataMap().get(player.getUniqueId()) == null ?
                 prisonDrop.getPlayerDataManager().addData(player) :
-                prisonDrop.getPlayerDataManager().getData(player);
+                prisonDrop.getPlayerDataManager().getDataMap().get(player.getUniqueId());
         data.setGlobalDrop(true);
         data.setDeathDrop(true);
         data.setMoveInventory(true);
