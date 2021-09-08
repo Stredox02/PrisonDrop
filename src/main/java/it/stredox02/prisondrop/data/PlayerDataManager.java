@@ -20,10 +20,7 @@ public class PlayerDataManager {
     }
 
     public void removeData(Player player) {
-        PlayerData data = dataMap.get(player.getUniqueId());
-        if (data != null) {
-            dataMap.remove(player.getUniqueId());
-        }
+        dataMap.remove(player.getUniqueId());
     }
 
 }
