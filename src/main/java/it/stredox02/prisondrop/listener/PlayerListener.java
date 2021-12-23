@@ -139,7 +139,10 @@ public class PlayerListener implements Listener {
             return;
         }
         Player player = event.getPlayer();
-        player.performCommand(prisonDrop.getConfig().getString("right-click-command-with-pickaxe"));
+        String command = prisonDrop.getConfig().getString("right-click-command-with-pickaxe");
+        if (!command.isEmpty()) {
+            player.performCommand(command);
+        }
     }
 
     @EventHandler
