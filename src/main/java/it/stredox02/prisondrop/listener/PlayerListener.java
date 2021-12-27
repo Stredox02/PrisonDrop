@@ -70,6 +70,9 @@ public class PlayerListener implements Listener {
         if (!data.isDeathDrop()) {
             return;
         }
+        if(data.getPickaxe() == null){
+            return;
+        }
         player.getInventory().addItem(data.getPickaxe());
         player.sendMessage(Utils.colorize(prisonDrop.getConfig().getString("language.kept-pickaxe")));
     }
